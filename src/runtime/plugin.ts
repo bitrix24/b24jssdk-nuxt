@@ -11,6 +11,8 @@ type whileB24InitCallback = {
 	reject: (error: any) => void
 }
 
+const delay = 50
+
 /**
  * Connecting api.bitrix24 (singleton)
  * - need call at app -> $initB24Frame()
@@ -41,7 +43,7 @@ export default defineNuxtPlugin((_nuxtApp) =>
 	
 	function startWatch()
 	{
-		const delay = 100
+		
 		window.setTimeout(() => {
 			if(
 				!isInit
