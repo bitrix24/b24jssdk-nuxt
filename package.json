@@ -32,13 +32,13 @@
 		"access": "public"
 	},
 	"scripts": {
+		"postinstall": "nuxt prepare",
 		"prepack": "nuxt-module-build build",
 		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
 		"dev": "nuxi dev playground",
 		"dev:build": "nuxi build playground",
-		"postinstall": "nuxt prepare",
-		"_release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
 		"release": "npm run test && npm run prepack",
+		"_release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
 		"lint": "eslint .",
 		"test": "vitest run",
 		"test:watch": "vitest watch",
