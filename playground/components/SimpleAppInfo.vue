@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, type Ref, ref, computed } from 'vue'
-import { B24Frame, LoadDataType, LoggerBrowser, useB24Helper } from '@bitrix24/b24jssdk'
+import type { B24Frame} from '@bitrix24/b24jssdk';
+import { LoadDataType, LoggerBrowser, useB24Helper } from '@bitrix24/b24jssdk'
 
 const { $initializeB24Frame } = useNuxtApp()
 
@@ -9,7 +10,7 @@ const $logger = LoggerBrowser.build(
 	'[playground: jssdk-nuxt] AppInfo',
 	true
 )
-const { initB24Helper, destroyB24Helper, getB24Helper } = useB24Helper()
+const { initB24Helper, getB24Helper } = useB24Helper()
 const isInit: Ref<boolean> = ref(false)
 const $isInitB24Helper = ref(false)
 
@@ -33,12 +34,12 @@ onMounted(async () =>
 		
 		isInit.value = true
 	}
-	catch( error: any )
+	catch( error )
 	{
 		$logger.error(error)
 		showError({
 			statusCode: 404,
-			statusMessage: error?.message || error,
+			statusMessage: (error instanceof Error) ? error.message : (error as string),
 			cause: error,
 			fatal: true
 		})

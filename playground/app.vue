@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, type Ref, ref, computed } from 'vue'
-import { B24Frame, B24LangList, LoadDataType, LoggerBrowser, useB24Helper } from '@bitrix24/b24jssdk'
+import type { B24Frame} from '@bitrix24/b24jssdk';
+import { B24LangList, LoadDataType, LoggerBrowser, useB24Helper } from '@bitrix24/b24jssdk'
 import SimpleProfile from '~/components/SimpleProfile.vue'
 import SimpleAppInfo from '~/components/SimpleAppInfo.vue'
 
@@ -50,12 +51,12 @@ onMounted(async () =>
 			})
 		}, 2_000)
 	}
-	catch( error: any )
+	catch( error )
 	{
 		$logger.error(error)
 		showError({
 			statusCode: 404,
-			statusMessage: error?.message || error,
+			statusMessage: (error instanceof Error) ? error.message : (error as string),
 			cause: error,
 			fatal: true
 		})

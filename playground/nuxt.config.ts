@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from "node:fs";
 
 export default defineNuxtConfig({
 	compatibilityDate: '2024-10-31',

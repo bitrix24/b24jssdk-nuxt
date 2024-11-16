@@ -1,8 +1,6 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
-export interface ModuleOptions
-{
-}
+export type ModuleOptions = object
 
 export default defineNuxtModule<ModuleOptions>({
 	meta: {

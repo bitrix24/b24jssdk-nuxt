@@ -32,13 +32,12 @@
 		"access": "public"
 	},
 	"scripts": {
-		"release": "npm run test && npm run prepack",
+		"release": "npm run lint && npm run test && npm run prepack",
 		"postinstall": "nuxt prepare",
 		"prepack": "nuxt-module-build build",
 		"dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
 		"dev": "nuxi dev playground",
 		"dev:build": "nuxi build playground",
-		"_release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
 		"lint": "eslint .",
 		"test": "vitest run",
 		"test:watch": "vitest watch",
@@ -46,12 +45,7 @@
 	},
 	"dependencies": {
 		"@nuxt/kit": "^3.13.2",
-		"@bitrix24/b24jssdk": "file:../b24jssdk/packages/jssdk",
-		
-		"axios": "^1.7.7",
-		"qs": "^6.13.0",
-		"luxon": "^3.5.0",
-		"protobufjs": "^7.4.0"
+		"@bitrix24/b24jssdk": "latest"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
