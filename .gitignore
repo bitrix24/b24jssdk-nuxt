@@ -85,9 +85,11 @@ coverage
 .vercel
 
 # nuxt
-.nuxt
 .output
 .data
+.nuxt
+.nitro
+dist
 .vercel_build_output
 .build-*
 .netlify
