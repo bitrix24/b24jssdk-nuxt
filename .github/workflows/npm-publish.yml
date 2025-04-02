@@ -10,20 +10,39 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v4
 
-      - name: 'Setup Node.js v22.*'
-        uses: actions/setup-node@v3
+      - name: 'Install pnpm'
+        uses: pnpm/action-setup@v4
+
+      - name: 'Install node'
+        uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org'
+          cache: pnpm
 
-      - name: 'Install dependencies (npm install) 📦...'
-        run: npm install
+      - name: 'Install dependencies'
+        run: pnpm install
 
-      - name: 'Run build (npm run build) 🔧...'
-        run: npm run release
+      - name: Prepare
+        run: pnpm run dev:prepare
 
-      - name: 'Publish package from /'
-        uses: JS-DevTools/npm-publish@v3
-        with:
-          registry: 'https://registry.npmjs.org/'
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Test
+        run: pnpm run test run
+
+      - name: Build
+        run: pnpm build
+
+      - name: Build playground
+        run: pnpm run dev:build
+
+      - name: 'Publish 🚀'
+        shell: bash
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
