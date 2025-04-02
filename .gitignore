@@ -1,12 +1,12 @@
 # dependencies
 /node_modules
 /packages/**/node_modules
-/playgrounds/**/node_modules
+/playground/node_modules
 
 # testing
 /coverage
 /packages/**/coverage
-/playgrounds/**/coverage
+/playground/coverage
 
 # yarn
 **/.yarn/cache
@@ -16,8 +16,8 @@
 logs
 *.log
 /packages/**/*.log
-/playgrounds/**/logs
-/playgrounds/**/*.log
+/playground/logs
+/playground/*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -50,12 +50,12 @@ Thumbs.db
 # production
 /dist
 /packages/**/dist
-/playgrounds/**/dist
-/playgrounds/**/.cache
-/playgrounds/**/.nitro
-/playgrounds/**/.nuxt
-/playgrounds/**/.data
-/playgrounds/**/.output
+/playground/dist
+/playground/.cache
+/playground/.nitro
+/playground/.nuxt
+/playground/.data
+/playground/.output
 docs/.vitepress/dist
 docs/.vitepress/cache
 
@@ -68,12 +68,12 @@ docs/.vitepress/cache
 .env.development.local
 .env.test.local
 .env.production.local
-/playgrounds/**/.env
-/playgrounds/**/.env.local
-/playgrounds/**/.env.development.local
-/playgrounds/**/.env.test.local
-/playgrounds/**/.env.production.local
-!/playgrounds/**/.env.local.example
+/playground/.env
+/playground/.env.local
+/playground/.env.development.local
+/playground/.env.test.local
+/playground/.env.production.local
+!/playground/.env.local.example
 
 # testing
 reports

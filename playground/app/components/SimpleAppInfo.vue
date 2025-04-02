@@ -19,7 +19,7 @@ onMounted(async () => {
 
   try {
     $b24 = await $initializeB24Frame()
-    isInit.value = true
+
     await initB24Helper(
       $b24,
       [
@@ -49,25 +49,18 @@ const b24Helper = computed(() => {
   if ($isInitB24Helper.value) {
     return getB24Helper()
   }
-
   return null
 })
 </script>
 
 <template>
-  <div class="">
-    <h3>AppInfo</h3>
-  </div>
-
   <ClientOnly>
-    <div v-if="!isInit">
-      Connection to Bitrix24 ...
-    </div>
-    <div
-      v-else
-      style="background-color: #0f172a; color: greenyellow; padding: 5px 10px"
-    >
-      <pre>{{ b24Helper?.appInfo.data }}</pre>
-    </div>
+    <B24Alert
+      v-if="!isInit"
+      description="Connection to Bitrix24 ..."
+    />
+    <ProsePre v-else>
+      {{ b24Helper?.appInfo.data }}
+    </ProsePre>
   </ClientOnly>
 </template>

@@ -19,7 +19,7 @@ onMounted(async () => {
 
   try {
     $b24 = await $initializeB24Frame()
-    isInit.value = true
+
     await initB24Helper(
       $b24,
       [
@@ -56,26 +56,25 @@ const b24Helper = computed(() => {
 </script>
 
 <template>
-  <div class="">
-    <h3>Profile</h3>
-  </div>
-
   <ClientOnly>
-    <div v-if="!isInit">
-      Connection to Bitrix24 ...
-    </div>
+    <B24Alert
+      v-if="!isInit"
+      description="Connection to Bitrix24 ..."
+    />
     <div v-else>
-      <div>
+      <ProseP>
         {{
           [
             b24Helper?.profileInfo.data.lastName,
             b24Helper?.profileInfo.data.name
           ].join(' ')
         }}
-      </div>
-      <div>
-        <span>{{ b24Helper?.profileInfo.data.isAdmin ? 'Administrator' : 'Not Administrator' }}</span>
-      </div>
+      </ProseP>
+      <B24Badge
+        :label="b24Helper?.profileInfo.data.isAdmin ? 'Administrator' : 'Not Administrator'"
+        :color="b24Helper?.profileInfo.data.isAdmin ? 'danger' : 'default'"
+        :use-fill="b24Helper?.profileInfo.data.isAdmin"
+      />
     </div>
   </ClientOnly>
 </template>
