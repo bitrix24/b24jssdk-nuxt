@@ -34,17 +34,15 @@
     "access": "public"
   },
   "scripts": {
-    "tmp_release": "npm run lint && npm run test && npm run prepack",
-    "release": "npm run test && npm run prepack",
+    "release": "npm run lint && npm run test && npm run prepack",
     "postinstall": "nuxt prepare",
     "prepack": "nuxt-module-build build",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit && nuxi typecheck playground",
+    "test": "vitest"
   },
   "dependencies": {
     "@nuxt/kit": "^3.16.2",
