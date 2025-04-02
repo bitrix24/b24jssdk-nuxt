@@ -1,16 +1,20 @@
-import { readFileSync } from "node:fs";
+import { readFileSync } from 'node:fs'
 
 export default defineNuxtConfig({
-	compatibilityDate: '2024-10-31',
-	devtools: { enabled: false },
-	devServer: {
-		port: 3001,
-		loadingTemplate: () =>
-		{
-			return readFileSync('./playground/template/devServer-loading.html', 'utf-8');
-		}
-	},
-	css: ['~/assets/css/main.css'],
-	modules: ['../src/module'],
-	B24JsSdkNuxt: {},
+  modules: [
+    '../src/module'
+  ],
+  devtools: { enabled: false },
+  css: ['~/assets/css/main.css'],
+  devServer: {
+    port: 3001,
+    loadingTemplate: () => {
+      return readFileSync('./playground/app/template/devServer-loading.html', 'utf-8')
+    }
+  },
+  future: {
+    compatibilityVersion: 4
+  },
+  compatibilityDate: '2024-04-12',
+  B24JsSdkNuxt: {}
 })
