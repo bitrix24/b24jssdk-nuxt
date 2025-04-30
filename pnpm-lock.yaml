@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@bitrix24/b24jssdk':
-        specifier: ^0.2.1
-        version: 0.2.1
+        specifier: ^0.2.3
+        version: 0.2.3
       '@nuxt/kit':
         specifier: ^3.16.2
         version: 3.16.2(magicast@0.3.5)
@@ -218,8 +218,8 @@ packages:
     peerDependencies:
       vue: ^3.5.13
 
-  '@bitrix24/b24jssdk@0.2.1':
-    resolution: {integrity: sha512-aJny9HfRVteFRAux2dzxggzRJfONzaODNo85osA3aNm9ydvoZHiG6VFQRmpzylIT1hmIhgVXfXTkARp+J4YnYg==}
+  '@bitrix24/b24jssdk@0.2.3':
+    resolution: {integrity: sha512-66SYuvtu2pMVB5QBC/siMulawLoum8o+CIwzOA00Wso6Px2Lvtp73hkOd2r2cF32EM6mzNp3rvoJscYfSenFaw==}
     engines: {node: '>=18.0.0'}
 
   '@bitrix24/b24style@1.0.1':
@@ -4846,7 +4846,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.8.2)
 
-  '@bitrix24/b24jssdk@0.2.1':
+  '@bitrix24/b24jssdk@0.2.3':
     dependencies:
       '@types/luxon': 3.6.2
       axios: 1.8.4
