@@ -1,6 +1,12 @@
 # Changelog
 
-## [0.4.1](https://github.com/bitrix24/b24jssdk-nuxt/compare/v0.3.0...v0.4.0) (2025-05-07)
+## [0.4.2](https://github.com/bitrix24/b24jssdk-nuxt/compare/v0.4.1...v0.4.2) (2025-05-08)
+
+### Chore
+
+* **deps:** update all dependencies
+
+## [0.4.1](https://github.com/bitrix24/b24jssdk-nuxt/compare/v0.3.0...v0.4.1) (2025-05-07)
 
 ### Chore
 

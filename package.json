@@ -1,6 +1,6 @@
 {
   "name": "@bitrix24/b24jssdk-nuxt",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "packageManager": "pnpm@10.10.0",
   "author": "Bitrix",
   "license": "MIT",
@@ -56,7 +56,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.17.2",
-    "@bitrix24/b24jssdk": "^0.4.1",
+    "@bitrix24/b24jssdk": "^0.4.2",
     "axios": "^1.9.0",
     "qs-esm": "^7.0.2",
     "luxon": "^3.6.1"
