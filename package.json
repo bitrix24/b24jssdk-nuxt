@@ -1,6 +1,6 @@
 {
   "name": "@bitrix24/b24jssdk-nuxt",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "packageManager": "pnpm@10.11.0",
   "author": "Bitrix",
   "license": "MIT",
