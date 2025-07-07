@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, type Ref, ref, computed } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 import type { B24Frame } from '@bitrix24/b24jssdk'
 import { LoadDataType, LoggerBrowser, useB24Helper } from '@bitrix24/b24jssdk'
 
@@ -11,7 +11,7 @@ const $logger = LoggerBrowser.build(
   true
 )
 const { initB24Helper, getB24Helper } = useB24Helper()
-const isInit: Ref<boolean> = ref(false)
+const isInit = ref(false)
 const $isInitB24Helper = ref(false)
 
 onMounted(async () => {

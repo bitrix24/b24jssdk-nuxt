@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, type Ref, ref, computed } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 import type { B24Frame } from '@bitrix24/b24jssdk'
 import { B24LangList, LoadDataType, LoggerBrowser, useB24Helper } from '@bitrix24/b24jssdk'
 import SimpleProfile from '~/components/SimpleProfile.vue'
@@ -15,9 +15,9 @@ const $logger = LoggerBrowser.build(
   '[playground: jssdk-nuxt] App',
   true
 )
-const b24CurrentLang: Ref<string> = ref(B24LangList.en)
+const b24CurrentLang = ref(B24LangList.en)
 const { initB24Helper, destroyB24Helper, getB24Helper } = useB24Helper()
-const isInit: Ref<boolean> = ref(false)
+const isInit = ref(false)
 const $isInitB24Helper = ref(false)
 const stopInterval = ref(0)
 
