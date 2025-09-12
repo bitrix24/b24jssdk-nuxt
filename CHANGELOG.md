@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.6](https://github.com/bitrix24/b24jssdk-nuxt/compare/v0.4.5...v0.4.6) (2025-09-11)
+
+### Features
+* **MessageManager:** add param isRawValue `MessageManager.send`, `PlacementManager.call('setValue', { value: 'some string' })`
+* **README:** add AI usage guide for Bitrix24 SDK
+
+### Chore
+* **deps:** update
+
 ## [0.4.5](https://github.com/bitrix24/b24jssdk-nuxt/compare/v0.4.4...v0.4.5) (2025-07-07)
 
 ### Features
