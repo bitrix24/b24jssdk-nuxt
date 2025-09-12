@@ -1,5 +1,5 @@
 <template>
-  <B24StackedLayout>
+  <B24SidebarLayout>
     <template #navbar>
       <ProseH1 class="mb-0">
         @bitrix24/b24jssdk-nuxt playground
@@ -8,5 +8,5 @@
 
     <!-- Content -->
     <slot />
-  </B24StackedLayout>
+  </B24SidebarLayout>
 </template>

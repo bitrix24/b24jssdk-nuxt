@@ -43,11 +43,11 @@
     "access": "public"
   },
   "scripts": {
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
     "prepack": "pnpm build",
     "build": "nuxt-module-build build",
-    "dev": "DEV=true nuxi dev playground",
-    "dev:build": "nuxi build playground",
+    "dev": "DEV=true nuxt dev playground",
+    "dev:build": "nuxt build playground",
     "dev:generate": "nuxt generate playground",
     "dev:preview": "nuxt preview playground",
     "lint": "eslint .",

@@ -15,9 +15,6 @@ export default defineNuxtConfig({
       return readFileSync('./playground/template/devServer-loading.html', 'utf-8')
     }
   },
-  future: {
-    compatibilityVersion: 4
-  },
   compatibilityDate: '2024-04-12',
   vite: {
     plugins: [
