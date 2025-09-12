@@ -1,5 +1,6 @@
 # Changelog
 
+## [0.4.9] (2025-09-12)
 ## [0.4.8] (2025-09-12)
 
 ## [0.4.6](https://github.com/bitrix24/b24jssdk-nuxt/compare/v0.4.5...v0.4.6) (2025-09-11)
